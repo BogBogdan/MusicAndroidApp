@@ -55,12 +55,15 @@ public class Player extends AppCompatActivity implements NotificationPlay{
         unregisterReceiver(broadcastReceiver);
 
     }
+
+
     @Override
-    public void onBackPressed() {
+    protected void onDestroy() {
+
         removeReciver();
-        super.onBackPressed();
-        // Handle the back button event
+        super.onDestroy();
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()== android.R.id.home)
